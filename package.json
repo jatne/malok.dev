@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/jatne/malok.dev#readme",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "sass": "^1.22.5"
   }
 }
