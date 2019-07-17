@@ -1,0 +1,31 @@
+{
+  "name": "malok.dev",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jatne/malok.dev.git"
+  },
+  "keywords": [
+    "personal",
+    "website",
+    "parcel",
+    "html",
+    "js",
+    "sass"
+  ],
+  "author": "Paweł Malok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jatne/malok.dev/issues"
+  },
+  "homepage": "https://github.com/jatne/malok.dev#readme",
+  "devDependencies": {
+    "sass": "^1.22.5"
+  }
+}
