@@ -1,9 +1,15 @@
 :root {
+  --color-sea: #00FFD8;
+  --color-blue: #1400FF;
   --color-white: #FFFFFF;
 }
 
 html {
 box-sizing: border-box;
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 *,
@@ -26,6 +32,10 @@ p {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 img,
 svg {
   display: block;
@@ -34,4 +44,91 @@ svg {
 
 body {
   background: var(--color-white);
+  color: var(--color-blue);
+}
+
+.content {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: [start] 1.5fr 1fr [end];
+  }
+}
+
+.lead {
+  position: relative;
+  font-size: 120px;
+  color: var(--color-sea);
+  font-weight: 700;
+  line-height: 1;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 180px;
+    transform: translateY(20vh);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: var(--color-blue);
+    left:0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+.text {
+  font-size: 40px;
+  text-align: center;
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--small {
+    font-size: .75em;
+  }
+
+  p {
+    margin-bottom: 1em;
+
+    &:last-of-type {
+      margin-bottom:0;
+    }
+  }
+}
+
+.box {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 50px;
+
+  &__main {
+    background: var(--color-sea);
+    flex-direction: column;
+    justify-content: space-between;
+      min-height: 700px;
+  }
+}
+
+.social {
+  ul {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+  }
+
+  li {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }
