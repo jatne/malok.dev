@@ -5,7 +5,16 @@
 }
 
 html {
-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 10px;
+
+  @media screen and (min-width: 48rem) {
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 85.375rem) {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -51,22 +60,22 @@ body {
   display: grid;
   width: 100%;
   height: 100vh;
-  min-height: 700px;
+  min-height: 43.75rem;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 64rem) {
     grid-template-columns: [start] 1.5fr 1fr [end];
   }
 }
 
 .lead {
   position: relative;
-  font-size: 120px;
+  font-size: 7.5rem;
   color: var(--color-sea);
   font-weight: 700;
   line-height: 1;
 
-  @media screen and (min-width: 1024px) {
-    font-size: 180px;
+  @media screen and (min-width: 64rem) {
+    font-size: 11.25rem;
     transform: translateY(20vh);
   }
 
@@ -75,7 +84,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    height: 40px;
+    height:2.5rem;
     background: var(--color-blue);
     left:0;
     bottom: 0;
@@ -84,7 +93,7 @@ body {
 }
 
 .text {
-  font-size: 40px;
+  font-size: 2.5rem;
   text-align: center;
 
   &--italic {
@@ -108,13 +117,13 @@ body {
   display: flex;
   width: 100%;
   align-items: center;
-  padding: 50px;
+  padding: 3.125rem;
 
   &__main {
     background: var(--color-sea);
     flex-direction: column;
     justify-content: space-between;
-    min-height: 700px;
+    min-height: 43.75rem;
   }
 }
 
@@ -128,13 +137,22 @@ body {
   }
 
   li {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: .875rem;
+    padding-right: .875rem;
+  }
+
+  a {
+    display: block;
+    max-width: 3rem;
+
+    @media screen and (min-width: 48rem) {
+      max-width: unset;
+    }
   }
 }
 
 .signet {
   svg {
-    min-width: 200px;
+    min-width: 12.5rem;
   }
 }
