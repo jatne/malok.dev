@@ -1,0 +1,13 @@
+include ../utilities/utilities.pug
+
+doctype html
+html(lang="pl" class="no-js")
+  include ../parts/head.pug
+
+  body
+    .content
+      block content
+
+      include ../parts/aside.pug
+
+    include ../parts/footer.pug
