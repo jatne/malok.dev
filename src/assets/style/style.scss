@@ -1,7 +1,38 @@
+@mixin line {
+  position: relative;
+  line-height: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: var(--line-height);
+    background: var(--line-color);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  width: 100%;
+}
+
+@mixin flex {
+  display: flex;
+  width: 100%;
+}
+
+$font: "IBM Plex Mono", monospace;
+
 :root {
-  --color-sea: #00FFD8;
-  --color-blue: #1400FF;
-  --color-white: #FFFFFF;
+  --color-sea: #00ffd8;
+  --color-blue: #1400ff;
+  --color-white: #ffffff;
+  --line-height: 0.2em;
+  --line-color: var(--color-blue);
 }
 
 html {
@@ -18,7 +49,7 @@ html {
 }
 
 body {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: $font;
 }
 
 *,
@@ -68,27 +99,26 @@ body {
 }
 
 .lead {
-  position: relative;
-  font-size: 7.5rem;
+  --font-size: 7.5rem;
+
+  font-size: var(--font-size);
   color: var(--color-sea);
   font-weight: 700;
-  line-height: 1;
+
+  @include line;
 
   @media screen and (min-width: 64rem) {
-    font-size: 11.25rem;
+    --font-size: 11.25rem;
     transform: translateY(20vh);
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height:2.5rem;
-    background: var(--color-blue);
-    left:0;
-    bottom: 0;
-    z-index: -1;
+  .page & {
+    --font-size: 1rem;
+    --line-height: 0.4em;
+
+    @media screen and (min-width: 64rem) {
+      --font-size: 4rem;
+    }
   }
 }
 
@@ -101,14 +131,14 @@ body {
   }
 
   &--small {
-    font-size: .75em;
+    font-size: 0.75em;
   }
 
   p {
     margin-bottom: 1em;
 
     &:last-of-type {
-      margin-bottom:0;
+      margin-bottom: 0;
     }
   }
 }
@@ -137,8 +167,8 @@ body {
   }
 
   li {
-    padding-left: .875rem;
-    padding-right: .875rem;
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
   }
 
   a {
@@ -156,3 +186,34 @@ body {
     min-width: 12.5rem;
   }
 }
+
+.page {
+  padding: clamp(16px, 2vw, 2em);
+  height: 100vh;
+  overflow: auto;
+
+  &__title {
+    padding-bottom: 4em;
+  }
+
+  &__desc {
+    padding-bottom: 4em;
+  }
+}
+
+.btn {
+  font-family: $font;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
+  background: var(--color-blue);
+  color: var(--color-sea);
+  border-radius: 6px;
+
+  &--link {
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+}
+
+@import "portfolio";

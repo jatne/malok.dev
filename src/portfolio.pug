@@ -1,4 +1,34 @@
 extends templates/default.pug
 
 block content
-  p hello portfolio
+  .page
+    .page__title
+      h1
+        span.lead portfolio
+    .page__desc
+      p Lista realizacji, wykonanych w&nbsp;ramach współpracy z&nbsp;firmami, w&nbsp;których byłem zatrudniony +&nbsp;własne rozwijające zainteresowania.
+
+    .portfolio
+      .portfolio__categories
+
+      .portfolio__pages
+        a(href="#" class="portfolio-page")
+          h3.portfolio-page__title Click and fly
+          span.portfolio-page__url https://click-and-fly.devx.pl/
+          p.portfolio-page__desc Made with ♥️ for Hania.
+          .portfolio-page__tags
+            span pure js
+
+        a(href="#" class="portfolio-page")
+          h3.portfolio-page__title Beerio.app
+          span.portfolio-page__url https://beerio.app/
+          p.portfolio-page__desc Diary but for bear.
+          .portfolio-page__tags
+            span react
+
+        a(href="#" class="portfolio-page")
+          h3.portfolio-page__title ZooSounds
+          span.portfolio-page__url https://zoosounds.devx.pl/
+          p.portfolio-page__desc Made with ♥️ for Hania.
+          .portfolio-page__tags
+            span vue
