@@ -41,8 +41,16 @@
     row-gap: var(--gap-row);
     column-gap: var(--gap-col);
 
-    @media screen and (min-width: 1200px) {
-      --cols: 1fr 1fr;
+    @media screen and (min-width: 414px) {
+      --cols: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 768px) {
+      --cols: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 1024px) {
+      --cols: repeat(2, 1fr);
     }
   }
 
@@ -51,6 +59,8 @@
     width: 100%;
     row-gap: 0.4em;
     border: 1px solid var(--theme);
+    border-radius: 4px;
+    padding: 1em;
 
     &[data-category="0"] {
       display: grid;
@@ -63,8 +73,9 @@
 
     &__url {
       color: var(--theme);
+      opacity: 0.6;
       font-style: italic;
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
 
     &__tags {
