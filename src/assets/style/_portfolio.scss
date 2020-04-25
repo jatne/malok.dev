@@ -1,6 +1,7 @@
 .portfolio {
   @include grid;
   row-gap: 2em;
+  padding-bottom: 2em;
 
   &__categories {
     ul {
