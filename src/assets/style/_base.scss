@@ -1,0 +1,31 @@
+:root {
+  --theme: #{$theme};
+  --accent: #{$accent};
+
+  --color-sea: #00ffd8;
+  --color-blue: #1400ff;
+  --color-white: #ffffff;
+  --line-height: 0.2em;
+  --line-color: var(--color-blue);
+
+  --body-background: #{$body-background};
+  --body-text: #{$body-text};
+  --lead-color: #{$lead-color};
+  --line: #{$line};
+  --aside-background: #{$aside-background};
+  --aside-color: #{$aside-color};
+  --aside-link: #{$aside-link};
+}
+
+  background: var(--body-background);
+  color: var(--body-text);
+  scrollbar-color: var(--accent) var(--theme);
+  color: var(--lead-color);
+    background: var(--aside-background);
+    color: var(--aside-color);
+
+    a {
+      color: var(--aside-link);
+    }
+  background: var(--accent);
+  color: var(--theme);

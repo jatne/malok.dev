@@ -12,12 +12,10 @@
   }
 
   &__category {
-    --line-color: var(--color-sea);
-
     @extend .btn;
     @extend .btn--link;
     font-size: 1.5em;
-    color: var(--color-blue);
+    color: var(--theme);
     padding: 0;
     @include line;
 
@@ -52,6 +50,7 @@
     display: none;
     width: 100%;
     row-gap: 0.4em;
+    border: 1px solid var(--theme);
 
     &[data-category="0"] {
       display: grid;
@@ -59,11 +58,11 @@
 
     &__title,
     &__desc {
-      color: var(--color-blue);
+      color: var(--theme);
     }
 
     &__url {
-      color: var(--color-sea);
+      color: var(--theme);
       font-style: italic;
       font-size: 0.9em;
     }
