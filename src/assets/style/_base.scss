@@ -146,7 +146,7 @@ body {
 .page {
   padding: 16px;
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1024px) {
     overflow: auto;
     padding: 2em;
   }
