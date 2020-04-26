@@ -1,5 +1,14 @@
-extends templates/default.pug
+include ./utilities/utilities.pug
 
-block content
-  .box
-    span.lead Cześć!
+doctype html
+html(lang="pl" class="no-js")
+  include ./parts/head.pug
+
+  body
+    .content
+      .box
+        span.lead Cześć!
+
+      include ./parts/aside.pug
+
+    include ./parts/footer.pug

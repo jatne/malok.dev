@@ -1,36 +1,33 @@
-extends templates/default.pug
+include ./utilities/utilities.pug
 
-block content
-  .page
-    .page__title
-      h1
-        span.lead portfolio
-    .page__desc
-      p Lista realizacji, wykonanych w&nbsp;ramach współpracy z&nbsp;firmami, w&nbsp;których byłem zatrudniony +&nbsp;własne rozwijające zainteresowania.
-      p
-        a(href="assets/pawel-malok_front-end-developer.pdf" class="btn btn--primary btn--xl" target="_blank") Zobacz moje CV
+doctype html
+html(lang="pl" class="no-js")
+  include ./parts/head.pug
+  meta(name="robots" content="noindex,nofollow")
 
-    .portfolio
-      .portfolio__categories
+  body
+    .content
+      .page
+        .page__title
+          h1
+            span.lead portfolio
+        .page__desc
+          p Lista realizacji, wykonanych w&nbsp;ramach współpracy z&nbsp;firmami, w&nbsp;których byłem zatrudniony +&nbsp;własne rozwijające zainteresowania.
+          p
+            a(href="assets/pawel-malok_front-end-developer.pdf" class="btn btn--primary btn--xl" target="_blank" id="resume") Zobacz moje CV
 
-      .portfolio__pages
-        a(href="#" class="portfolio-page")
-          h3.portfolio-page__title Click and fly
-          span.portfolio-page__url https://click-and-fly.devx.pl/
-          p.portfolio-page__desc Made with ♥️ for Hania.
-          .portfolio-page__tags
-            span pure js
+        .portfolio
+          .portfolio__categories
+          .portfolio__pages
 
-        a(href="#" class="portfolio-page")
-          h3.portfolio-page__title Beerio.app
-          span.portfolio-page__url https://beerio.app/
-          p.portfolio-page__desc Diary but for bear.
-          .portfolio-page__tags
-            span react
+      include ./parts/aside.pug
 
-        a(href="#" class="portfolio-page")
-          h3.portfolio-page__title ZooSounds
-          span.portfolio-page__url https://zoosounds.devx.pl/
-          p.portfolio-page__desc Made with ♥️ for Hania.
-          .portfolio-page__tags
-            span vue
+    script(src="assets/js/portfolio.js")
+    include ./parts/footer.pug
+    script.
+      document.getElementById('resume').addEventListener('click', () => {
+        gtag('event', 'click', {
+        event_category: 'resume',
+        event_label: 'open'
+        });
+      });
