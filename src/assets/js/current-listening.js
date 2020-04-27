@@ -1,5 +1,5 @@
 const endpoint =
-  `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.lastfm_user}&api_key=${process.env.lastfm_key}&format=json`;
+  `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.lastfm_user}&api_key=${process.env.lastfm_key}&format=json`;
 
 async function getMusicData(endpoint) {
   const response = await fetch(endpoint);
