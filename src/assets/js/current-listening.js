@@ -15,7 +15,7 @@ const handleSongBar = songObj => {
 
   const songBar = document.createElement('div');
   songBar.classList.add('song-bar');
-  songBar.innerHTML = `🟢 Jestem online i 🎶 właśnie słucham <a href="${songObj.url}" target="_blank">${songObj.artist} - ${songObj.name}</a>`;
+  songBar.innerHTML = `🟢 Jestem online i właśnie 🎶 słucham <a href="${songObj.url}" target="_blank"><img src="${songObj.image}" alt="${songObj.artist} (${songObj.album})" width="34" height="34" />${songObj.artist} - ${songObj.name}</a>`;
 
   document.querySelector('.content').append(songBar);
 };

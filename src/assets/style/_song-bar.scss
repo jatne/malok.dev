@@ -1,14 +1,42 @@
+$songbar-image-bp: 576px;
+
 .song-bar {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background: var(--theme);
-  padding: 0.5em 3em;
+  padding: 0.5em 1em;
   color: #fff;
+
+  @media screen and (min-width: $songbar-image-bp) {
+    @include flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0.5em 3em;
+  }
 
   a {
     color: var(--accent);
     font-weight: 600;
+
+    @media screen and (min-width: $songbar-image-bp) {
+      display: inline-grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      column-gap: 0.8em;
+      padding-left: 0.8em;
+    }
+
+    img {
+      display: none;
+
+      @media screen and (min-width: $songbar-image-bp) {
+        display: block;
+      }
+    }
   }
 }
