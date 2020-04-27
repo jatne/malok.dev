@@ -1,0 +1,14 @@
+.song-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--theme);
+  padding: 0.5em 3em;
+  color: #fff;
+
+  a {
+    color: var(--accent);
+    font-weight: 600;
+  }
+}

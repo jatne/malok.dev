@@ -24,3 +24,4 @@ dist
 build/**/*
 .parcel-cache
 src/assets/pawel-malok_front-end-developer.pdf
+.env
